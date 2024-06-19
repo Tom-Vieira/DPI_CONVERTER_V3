@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPI CONVERTER</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DPI CONVERTER</h1>
+        <form action="/" method="post" enctype="multipart/form-data" id="upload-form">
+            <div>
+                <label for="file">Escolha as imagens (máx 10):</label>
+                <input type="file" name="file" id="file" multiple required>
+            </div>
+            <div id="preview"></div>
+            <div>
+                <label for="dpi">Novo DPI:</label>
+                <input type="number" name="dpi" id="dpi" placeholder="300" required>
+            </div>
+            <div>
+                <button type="submit">Alterar DPI</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('file').addEventListener('change', function(event) {
+            const preview = document.getElementById('preview');
+            preview.innerHTML = '';
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.width = 100;
+                    img.style.margin = '10px';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
