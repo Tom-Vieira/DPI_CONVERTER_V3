@@ -36,28 +36,10 @@ input[type="file"] {
     border-radius: 4px;
 }
 
-button[type="submit"] {
-    display: block;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #0056b3;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-    background-color: #004c9c;
-}
-
+button[type="submit"],
 .download-all-button {
     display: block;
-    margin-bottom: 10px;
-    margin-left: 0; 
+    margin: 10px auto;
     padding: 10px 20px;
     background-color: #0056b3;
     color: white;
@@ -67,8 +49,10 @@ button[type="submit"]:hover {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 50%; 
 }
 
+button[type="submit"]:hover,
 .download-all-button:hover {
     background-color: #004c9c;
 }
@@ -110,14 +94,24 @@ button[type="submit"]:hover {
     border-color: #aaaaaa;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
+/* Estilos para o footer */
+footer {
+    text-align: center;
+    margin-top: 260px;
+    padding: 5px 0;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 0 0 5px 5px;
 }
 
-@media (min-width: 600px) {
-    input[type="file"] {
-        width: calc(100% - 20px);
-    }
+footer img {
+    width: 3px; 
+    margin-bottom: 2px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 10px;
+    font-style: italic;
+
 }

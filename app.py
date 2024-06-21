@@ -1,3 +1,7 @@
+# Autor: Cleilton Vieira
+# Email: cleilton7700@gmail.com
+
+
 from flask import Flask, request, render_template, redirect, url_for, flash, send_file, send_from_directory
 from PIL import Image
 import os

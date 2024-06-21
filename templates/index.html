@@ -6,7 +6,6 @@
     <title>DPI CONVERTER</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="icon" href="../static/images/favicon.png" type="image/x-icon">
-
 </head>
 <body>
     <div class="container">
@@ -49,6 +48,12 @@
 
         <a href="{{ url_for('download_all') }}" class="button download-all-button">Baixar todas as imagens processadas</a>
     </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <img src="../static/images/logo.png" alt="Logo da Sua Empresa" style="width: 80px;">
+        <p>Soluções em Tecnologia</p>
+    </footer>
 
     <script>
         document.getElementById('file').addEventListener('change', function(event) {
