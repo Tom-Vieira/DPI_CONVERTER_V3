@@ -29,6 +29,7 @@ h1 {
     text-align: center;
     color: #004c9c;
     padding: 20px;
+    font-size: 35px;
 }
 
 
@@ -43,6 +44,7 @@ label {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    font-size: 18px;
 }
 
 input[type="file"] {
@@ -55,13 +57,13 @@ input[type="file"] {
 }
 
 #dpi {
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
     border: 1px solid #cccccc;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px auto;
+    margin: 10px auto;
     text-align: center;
     font-size: 15px;
     margin-bottom: 20px;
