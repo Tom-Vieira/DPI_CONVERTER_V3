@@ -6,6 +6,9 @@
     <title>DPI CONVERTER</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="icon" href="../static/images/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <div class="container">
@@ -24,16 +27,16 @@
 
         <form action="/" method="post" enctype="multipart/form-data" id="upload-form">
             <div>
-                <label for="file">Escolha as imagens (máx 100):</label>
+                <label for="file" id="label-1">Escolha as imagens (máx 100):</label>
                 <input type="file" name="file" id="file" multiple required>
             </div>
             <div id="file-list"></div>
             <div>
-                <label for="dpi">Novo DPI:</label>
+                <label for="dpi" id="label-2">Novo DPI:</label>
                 <input type="number" name="dpi" id="dpi" placeholder="300" required>
             </div>
-            <div>
-                <button type="submit">Aplicar DPI</button>
+            <div id="submit-button" style="display: none;">
+                <button type="submit" class="button-first">Aplicar DPI</button>
             </div>
         </form>
 
@@ -44,29 +47,18 @@
                     <li><a href="{{ url_for('download_image', filename=image_path) }}">{{ image_path }}</a></li>
                 {% endfor %}
             </ul>
+            <a href="{{ url_for('download_all') }}" class="button download-all-button">Baixar todas as imagens processadas</a>
         {% endif %}
 
-        <a href="{{ url_for('download_all') }}" class="button download-all-button">Baixar todas as imagens processadas</a>
     </div>
 
     <!-- Rodapé -->
     <footer>
-        <img src="../static/images/logo.png" alt="Logo da Sua Empresa" style="width: 80px;">
+        <img src="../static/images/logo.png" alt="Logo da Sua Empresa" style="width: 60px;">
         <p>Soluções em Tecnologia</p>
     </footer>
 
-    <script>
-        document.getElementById('file').addEventListener('change', function(event) {
-            const fileList = document.getElementById('file-list');
-            fileList.innerHTML = '';
-            const files = event.target.files;
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                const listItem = document.createElement('div');
-                listItem.textContent = file.name;
-                fileList.appendChild(listItem);
-            }
-        });
-    </script>
+    <!-- JavaScript externo -->
+    <script src="../static/js/script.js"></script>
 </body>
 </html>

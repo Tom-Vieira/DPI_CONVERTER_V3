@@ -1,24 +1,61 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const directoryForm = document.getElementById('directory-form');
-    const dpiForm = document.getElementById('dpi-form');
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('file');
+    const fileList = document.getElementById('file-list');
+    const submitButton = document.getElementById('submit-button');
+    const downloadAllButton = document.querySelector('.download-all-button');
+    const resetButton = document.getElementById('reset-button');
+    const labelEsc = document.getElementById('label-1')
+    const labelDpi = document.getElementById('label-2')
+    const dpi = document.getElementById('dpi')
+    // Monitorar mudanças no input de arquivo
+    fileInput.addEventListener('change', function(event) {
+        fileList.innerHTML = '';
+        const files = event.target.files;
 
-    if (directoryForm) {
-        directoryForm.addEventListener('submit', (e) => {
-            const directoryInput = document.getElementById('directory');
-            if (!directoryInput.value.trim()) {
-                e.preventDefault();
-                alert('Por favor, insira um diretório válido.');
-            }
-        });
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const listItem = document.createElement('div');
+            listItem.textContent = file.name;
+            fileList.appendChild(listItem);
+        }
+
+        // Mostrar o botão Aplicar DPI se pelo menos uma imagem foi carregada
+        if (files.length > 0) {
+            submitButton.style.display = 'block';
+            downloadAllButton.style.display = 'inline-block';
+        } else {
+            submitButton.style.display = 'none';
+            downloadAllButton.style.display = 'none';
+        }
+        
+
+        
+    });
+
+  
+
+    // Verificar se há imagens processadas para mostrar o botão download
+    if (document.querySelector('.processed-images li')) {
+       
+        downloadAllButton.style.display = 'inline-block';
+    } else {
+       
+        downloadAllButton.style.display = 'none';
     }
 
-    if (dpiForm) {
-        dpiForm.addEventListener('submit', (e) => {
-            const dpiInput = document.getElementById('dpi');
-            if (!dpiInput.value.trim() || parseInt(dpiInput.value) <= 0) {
-                e.preventDefault();
-                alert('Por favor, insira um valor de DPI válido.');
-            }
-        });
+    //Verificar se há imagens processadas para ocultar as labels e os inputs já usados
+    if (document.querySelector('.processed-images li')){
+        labelEsc.style.display = 'none'
+        labelDpi.style.display = 'none'
+        dpi.style.display = 'none'
+        fileInput.style.display = 'none'
     }
+
+
+
+      
+
+
 });
+
+ 

@@ -1,28 +1,37 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #444444;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Garante que o body ocupe pelo menos toda a altura da viewport */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .container {
+    width: 80%;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 80px auto;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    flex:1
+
+
+
 }
 
 h1 {
+
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    color: #333333;
+    color: #004c9c;
+    padding: 20px;
 }
+
+
 
 form {
     margin-bottom: 20px;
@@ -30,22 +39,43 @@ form {
 
 label {
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 input[type="file"] {
-    margin-bottom: 10px;
-    width: calc(100% - 20px);
-    padding: 16px;
+    margin: 20px 0;
+    width: calc(100% - 30px);
+    padding: 12px;
     border: 1px solid #cccccc;
     border-radius: 4px;
+
 }
 
-button[type="submit"],
-.download-all-button {
+#dpi {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+
+
+}
+
+button[type="submit"] {
+
+    font-weight: bold;
     display: block;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 10px 20px;
-    background-color: #0056b3;
+    background-color: #004c9c;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -53,12 +83,34 @@ button[type="submit"],
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 50%; /* Largura definida para ocupar metade do container */
+    width: 20%;
+   
 }
+
+.download-all-button {
+
+    font-weight: bold;
+    display: block;
+    margin:  0 auto;
+    padding: 10px 20px;
+    background-color: #004c9c;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 95%;
+    
+}
+
+
+
 
 button[type="submit"]:hover,
 .download-all-button:hover {
-    background-color: #004c9c;
+    background-color: #0061bf;
 }
 
 .flashes {
@@ -67,19 +119,28 @@ button[type="submit"]:hover,
     margin-bottom: 10px;
 }
 
+h2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
 .flashes li {
     background-color: #d4edda;
     color: #155724;
     padding: 10px;
     margin-bottom: 5px;
     border-radius: 4px;
+
 }
 
 .processed-images-select {
-    width: calc(100% - 20px);
-    padding: 10px;
+    margin: 10px 0;
+    width: calc(100% - 30px);
+    padding: 12px;
     border: 1px solid #cccccc;
     border-radius: 4px;
+
 }
 
 .processed-images a {
@@ -101,23 +162,21 @@ button[type="submit"]:hover,
 /* Estilos para o footer */
 footer {
     text-align: center;
-    padding: 5px 0;
-    background-color: #1e7de2;
+    padding: 4px 0;
+    background-color: #000;
     color: white;
     border-radius: 0 0 5px 5px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 }
 
 footer img {
-    width: 100px; /* Tamanho da imagem do logo */
+    width: 100px;
+    /* Tamanho da imagem do logo */
     margin-bottom: 2px;
 }
 
 footer p {
     margin: 0;
-    font-size: 10px;
-    font-style: italic;
-    padding-bottom: 2px;
+    font-size: 8px;
+    padding-bottom: 4px;
 }
