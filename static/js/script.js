@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileList = document.getElementById('file-list');
     const submitButton = document.getElementById('submit-button');
     const downloadAllButton = document.querySelector('.download-all-button');
-    const resetButton = document.getElementById('reset-button');
     const labelEsc = document.getElementById('label-1')
     const labelDpi = document.getElementById('label-2')
     const dpi = document.getElementById('dpi')
+
     // Monitorar mudanças no input de arquivo
     fileInput.addEventListener('change', function(event) {
         fileList.innerHTML = '';
@@ -19,16 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fileList.appendChild(listItem);
         }
 
-        // Mostrar o botão Aplicar DPI se pelo menos uma imagem foi carregada
-        if (files.length > 0) {
-            submitButton.style.display = 'block';
-            downloadAllButton.style.display = 'inline-block';
-        } else {
-            submitButton.style.display = 'none';
-            downloadAllButton.style.display = 'none';
-        }
-        
-
+     
         
     });
 
@@ -49,8 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         labelDpi.style.display = 'none'
         dpi.style.display = 'none'
         fileInput.style.display = 'none'
+        submitButton.style.display = 'none'
     }
 
+   
 
 
       
